@@ -1,51 +1,51 @@
 # Yuan Wang -- Check Lab 10 Code Outputs
 
 stages:
-        - setup
-	- build
-	- test
+    - setup
+    - build
+    - test
 
 check-file-structure:
-	stage: setup
-	tags:
-		- ugrad
-	script:
-		- test -d Lab10
-		- test -d Lab10/adventure
-                - test -d Lab10/deusex
-		- test -f Lab10/adventure/Makefile
-                - test -f Lab10/deusex/Makefile
+    stage: setup
+    tags:
+        - ugrad
+    script:
+        - test -d Lab10
+        - test -d Lab10/adventure
+        - test -d Lab10/deusex
+        - test -f Lab10/adventure/Makefile
+        - test -f Lab10/deusex/Makefile
 
 run-adventure:
-        stage: test
-	tags:
-		- ugrad
-	script:
-		- cd Lab10/adventure/
-		- rm -f *.o adventure_main
-		- make
-		- test -f adventure_main
-		- ./adventure_main level 3
-                - ./adventure_main power 4
-                - ./adventure_main subtlety 5
-                - ./adventure_main strategy 6
-                - ./adventure_main charm 7
-                - ../../CI/compare-levelpath-outputs.sh
-                - ../../CI/compare-powerpath-outputs.sh
-                - ../../CI/compare-subtletypath-outputs.sh
-                - ../../CI/compare-strategypath-outputs.sh
-                - ../../CI/compare-charmpath-outputs.sh
+    stage: test
+    tags:
+        - ugrad
+    script:
+        - cd Lab10/adventure/
+        - rm -f *.o adventure_main
+        - make
+        - test -f adventure_main
+        - ./adventure_main level 3
+        - ./adventure_main power 4
+        - ./adventure_main subtlety 5
+        - ./adventure_main strategy 6
+        - ./adventure_main charm 7
+        - ../../CI/compare-levelpath-outputs.sh
+        - ../../CI/compare-powerpath-outputs.sh
+        - ../../CI/compare-subtletypath-outputs.sh
+        - ../../CI/compare-strategypath-outputs.sh
+        - ../../CI/compare-charmpath-outputs.sh
 
 
 
 run-deusex:
-	stage: test
-	tags:
-		- ugrad
-	script:
-		- cd Lab10/deusex/
-		- rm -f *.o deusex_main
-		- make
-                - test -f deusex_main
-                - ./deusex_main 8
-                - ../../CI/compare-deusex-outputs.sh
+    stage: test
+    tags:
+        - ugrad
+    script:
+        - cd Lab10/deusex/
+        - rm -f *.o deusex_main
+        - make
+        - test -f deusex_main
+        - ./deusex_main 8
+        - ../../CI/compare-deusex-outputs.sh
