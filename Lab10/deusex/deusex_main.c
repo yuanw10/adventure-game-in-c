@@ -119,7 +119,7 @@ int main(int argc, char** argv)
   Queue* args = create_args(heroes, powerPath, subtletyPath, strategyPath, charmPath);
 
 
-  printf("Done.\n\nRunning the thread pool, let heroes challenge thier optimal path...");
+  printf("Done.\n\nRunning the thread pool, let heroes challenge their optimal path...");
 
 
   //Create timer
@@ -167,7 +167,7 @@ int main(int argc, char** argv)
   printf("\nProducing output files...\n");
 
 
-  //Output heroes who successfully challanged all locations in the required path
+  //Output heroes who successfully challanged all locations in their optimal path
   if(!output_alive(sortedHeroes, aliveFile))
   {
     printf("Failure.\n");
@@ -176,7 +176,7 @@ int main(int argc, char** argv)
   printf("%s is done.\n", aliveFile);
 
 
-  //Output heroes who died during the path
+  //Output heroes who died during their optiaml path
   if(!output_dead(sortedHeroes, deadFile))
   {
     printf("Failure.\n");
