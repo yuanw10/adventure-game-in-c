@@ -1,0 +1,32 @@
+To implement the Adventure contract, you should do the following steps:
+
+(1) make
+  Compile all the source files, including the main function (adventure_main.c).
+
+(2) ./adventure_main [PathName] [PoolSize]
+  The main function is in adventure_main.c. After compiling, you would be able to run it. 
+   
+  To run the main function, you need to identify two arguments:
+  1st: the pathname indicating which path to run. 
+	 A valid argument is one of level, power, subtlety, strategy, charm
+  2nd: an integer number indicating the size of the thread pool.
+	 A valid argument is an integer greater than zero.
+
+  Any invalid arguments would cause the program to exit.
+
+
+[Note]
+
+Each time when inputting "./adventure_main [PathName] [PoolSize]", the program runs only once with
+the two arguments. Therefore, if you want to run different paths, you have to do Step (2) again with 
+another two valid arguments.
+
+After running the program, corresponding output files will be produced. You can find them in the
+same directory. File names are PathName_alive and PathName_dead, where PathName is one of (level, 
+power, subtlety, strategy, charm).
+
+Because the program generates output files using the pathname as a part of the file names, if you 
+run the program many times with the same path name, all output files will be overwritten. Only files 
+generated during the last time will remain.....Of course, that does not matter as each time the program 
+produces pretty much the same files with the same pathname.
+
