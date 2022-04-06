@@ -1,0 +1,32 @@
+To implement Deus ex contract, you should do the following steps:
+
+(1) make
+  Compile all the source files, including the main function (deusex_main.c).
+
+(2) ./deusex_main [PoolSize]
+  The main function is stored in deusex_main.c. After compiling, you would be able to run it. 
+   
+  To run the main function, you need to identify one argument:
+  an integer number indicating the size of the thread pool.
+
+  Any other types will cause the program to exit.
+
+
+[Note]
+
+After running the program, output files will be generated. You can find them in the same directory. 
+File names are deusex_alive and deusex_dead.
+
+Deus ex contract uses the following idea to allow heroes to reach their highest potential level:
+
+In the main function, all paths associated with locations' ratings will be generated, they are: 
+Power Path, Subtlety Path, Strategy Path, Charm Path.
+ 
+Assign the optimal path to each hero, using their primary attribute. The primary attribute is the 
+greatest among all four attributes. A path would be easier for the hero to challenge if they use 
+the primary attribute, as paths are locations in order by corresponding rating smallest to greatest.
+For example, if a hero's primary attribute is strength, then Power Path is optimal.
+
+To do so, I modified the function that creates Args for the thread pool. When creating the queue of
+Args, check which attribute is primary for each hero, then assign the corresponding optimal path.
+After that, put the Args queue to the thread pool to execute.
