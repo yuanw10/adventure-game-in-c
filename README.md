@@ -37,4 +37,4 @@ The repository represents a weekly lab.
 - `.gitlab-ci.yml`: CI/CD pipeline for assessments using automated build and test
 - `Instruction.md`: Detailed instruction provided by the lead TA
 
-Code/files written by me in this lab: `Lab10/`, `.gitlab-ci.yml`
+Code/files written by me in this lab: `Lab10/`, `.gitlab-ci.yml`, shell scripts in `CI/`
